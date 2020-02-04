@@ -9,7 +9,7 @@ public class pBook extends book{
         numCopies = n;
     }
     public void setSp(){
-        sP = 0.05*bP;
+        sP = 1.05*bP;
     }
     public void buy(){
         numCopies--;
