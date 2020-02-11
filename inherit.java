@@ -3,41 +3,40 @@ import javaLab.pBook;
 import java.util.Scanner;
 
 public class inherit{
-    public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
+    public static void main(final String[] args) {
+        final Scanner s = new Scanner(System.in);
         int c = 1;
-        while(c != 0){
+        while (c != 0) {
             System.out.println("\n");
             System.out.println("Welcome to the book Management System");
             System.out.println("Enter the Name: ");
-            String name = s.nextLine();
+            final String name = s.nextLine();
             System.out.println("Enter the Author: ");
-            String author = s.nextLine();
+            final String author = s.nextLine();
             System.out.println("Enter the number of Pages");
-            int pages = s.nextInt(); 
+            final int pages = s.nextInt();
             System.out.println("Enter the Choice");
             System.out.println("1. EBook");
             System.out.println("2. Printed Book");
             System.out.println("0. Exit");
             c = s.nextInt();
-            if(c == 1){
+            if (c == 1) {
                 System.out.println("Enter the book format");
                 s.nextLine();
-                String format = s.nextLine();
+                final String format = s.nextLine();
                 System.out.println("Enter the book size");
-                double size = s.nextDouble();
+                final double size = s.nextDouble();
                 s.nextLine();
-                eBook eB = new eBook(name, author, pages , format);
+                final eBook eB = new eBook(name, author, pages, format);
                 eB.setSize(size);
                 System.out.println("Book Details");
                 eB.getDetails();
-            }
-            else if(c == 2){
+            } else if (c == 2) {
                 System.out.println("Enter Number of Copies");
-                int n = s.nextInt();
+                final int n = s.nextInt();
                 System.out.println("Enter Base Price");
-                double b = s.nextDouble();
-                pBook pB = new pBook(name, author, pages, n, b);
+                final double b = s.nextDouble();
+                final pBook pB = new pBook(name, author, pages, n, b);
                 pB.setSp();
                 System.out.println("Buy a book? 0-No, 1-Yes");
                 c = s.nextInt();
@@ -50,5 +49,6 @@ public class inherit{
             c = s.nextInt();
             s.nextLine();
         }
+        s.close();
     }
 }
